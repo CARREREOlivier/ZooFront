@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+/*FORMS*/
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
