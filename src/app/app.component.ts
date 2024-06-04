@@ -4,12 +4,13 @@ import {TestFormComponent} from "./Forms/test-form/test-form.component";
 import {CommonModule} from "@angular/common";
 import {HeaderComponent} from "./Header/header/header.component";
 import {FooterComponent} from "./Footer/footer/footer.component";
+import {NavbarComponent} from "./Navigation/navbar/navbar.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TestFormComponent, CommonModule, RouterLink, RouterLinkActive, HeaderComponent, FooterComponent],
+  imports: [RouterOutlet, TestFormComponent, CommonModule, RouterLink, RouterLinkActive, HeaderComponent, FooterComponent, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
