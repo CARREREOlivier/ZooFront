@@ -1,5 +1,5 @@
 <!--navigation-->
-<nav>
+<!--<nav>
   <ul>
     <li><a routerLink="/Accueil" routerLinkActive="active" ariaCurrentWhenActive="page">Accueil</a></li>
     <li><a routerLink="/Services-zoo" routerLinkActive="active" ariaCurrentWhenActive="page">Services du zoo</a></li>
@@ -12,4 +12,30 @@
     <li><a routerLink="/Habitats" routerLinkActive="active" ariaCurrentWhenActive="page">Habitats</a></li>
     <li><a routerLink="/Dashboard-Habitats" routerLinkActive="active" ariaCurrentWhenActive="page">Dashboard Habitats</a></li>
   </ul>
+</nav>-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Zoo Arcadia</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/Accueil">Accueil <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/Services-zoo">Services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/Habitats">Habitats</a>
+      </li>
+      <li class="nav-item" *ngIf="router.url == '/Connexion'">
+        <a class="nav-link" href="/Connexion">Connexion</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/Contact">Contacts</a>
+      </li>
+    </ul>
+  </div>
 </nav>
