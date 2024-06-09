@@ -1,1 +1,22 @@
-<p>connexion works!</p>
+<form [formGroup]="loginForm" (submit)="login()" autocomplete="new-password">
+  <h1> Login </h1>
+
+  <div class="form-control">
+    <label for="username">username</label>
+    <input
+      formControlName="username"
+      id="username"
+      autocomplete="yes"
+      type="username"/>
+  </div>
+  <div class="form-control">
+    <label for="password">password</label>
+    <input
+      formControlName="password"
+      id="password"
+      autocomplete="yes"
+      type="email"/>
+  </div>
+
+  <button type="submit"> Login &#8594;</button>
+</form>
