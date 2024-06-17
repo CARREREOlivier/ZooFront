@@ -1,10 +1,24 @@
 
 
 <app-header></app-header>
-<h1>Zoo Arcadia</h1>
+<div class="container">
+  <div class="row"><h1 class="title">Arcadia</h1></div>
+  <div class="row">
+    <div class="col">
+      <button type="button" class="btn btn-primary">Horaires du parc</button>
+    </div>
 
+    <div class="col">
+      <button type="button" class="btn btn-primary">réserver un service</button>
+    </div>
+  </div>
+</div>
+
+
+<button type="button" class="btn btn-warning" id="cookieButton">Cookies</button>
 <!-- The routed views render in the <router-outlet>-->
 <router-outlet></router-outlet>
+
 
 <app-footer></app-footer>
 
