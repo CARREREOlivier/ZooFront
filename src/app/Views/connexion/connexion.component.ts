@@ -37,7 +37,7 @@ export class ConnexionComponent {
     if (this.loginForm.invalid) {
       return;
     }
-    alert("Calling BackEnd to login")
+    alert("Calling BackEnd to login") //to delete
   }
 
 }
