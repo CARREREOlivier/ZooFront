@@ -1,0 +1,14 @@
+.navbar-brand {
+  line-height:1em;
+  padding-top:0.1em;
+  padding-bottom:0.1em;
+  margin-left:1em;
+  font-size:3em;
+}
+
+.navbar-brand small {
+  display:block;
+  font-size:50%;
+}
+
+
