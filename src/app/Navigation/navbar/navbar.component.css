@@ -6,9 +6,16 @@
   font-size:3em;
 }
 
+.navbar-text-color{
+  color: var(--jaune-sable);
+}
+
 .navbar-brand small {
   display:block;
   font-size:50%;
 }
 
 
+.navbar-zoo{
+  background-color: var(--vert-feuillage);
+}

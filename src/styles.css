@@ -6,7 +6,7 @@
   padding: 20px;
 }
 
-footer {
+.footer {
   position: fixed;
   bottom: 0;
 }
@@ -15,3 +15,68 @@ footer {
   padding-top: 60px;
   padding-bottom: 40px
 }
+/* Polices importées */
+.cantora-one-regular {
+  font-family: "Cantora One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Couleurs */
+:root {
+  --vert-feuillage: #4CAF50;
+  --vert-mousse: #388E3C;
+  --bleu-ciel: #81D4FA;
+  --brun-terre: #795548;
+  --blanc-ivoire: #F5F5DC;
+  --jaune-sable: #FDD835;
+}
+
+/* Arrière-plan et Texte Principal */
+body {
+  background-color: var(--blanc-ivoire);
+  font-family: 'Cantora One', serif;
+  color: var(--brun-terre);
+  margin: 0;
+  padding: 0;
+}
+
+/* Titres Principaux */
+h1, h2, h3 {
+  font-family: 'Cantora One', cursive;
+  color: var(--vert-feuillage);
+}
+
+/* Liens */
+a {
+  color: var(--bleu-ciel);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--jaune-sable);
+}
+
+/* Boutons */
+.btn-custom {
+  background-color: var(--vert-feuillage);
+  color: var(--blanc-ivoire);
+  border: none;
+  padding: 10px 20px;
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+}
+
+.btn-custom:hover {
+  background-color: var(--vert-mousse);
+}
+
+/* Sections Spécifiques */
+.section {
+  padding: 20px;
+  margin: 20px;
+  background-color: var(--jaune-sable);
+  border-radius: 8px;
+}
+
+
