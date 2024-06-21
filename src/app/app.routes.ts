@@ -11,6 +11,7 @@ import {DashboardHabitatComponent} from "./Views/dashboard-habitat/dashboard-hab
 import {AvisComponent} from "./Views/avis/avis.component";
 
 export const routes: Routes = [
+  { path: '', component: AccueilComponent},
   { path: 'Accueil', component: AccueilComponent},
   { path: 'Services-zoo', component: ZooServicesComponent},
   { path: 'Espace-employe', component: EmployesComponent},
