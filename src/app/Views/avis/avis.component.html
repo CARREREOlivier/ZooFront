@@ -1,1 +1,17 @@
-<p>avis works!</p>
+<section class="vh-100">
+  <div class="container-fluid" style="width:75%">
+    <div class="spacer"></div>
+    <div class="row">
+      <h1 class="title text-center">Laissez nous votre avis!</h1>
+    </div>
+    <div class="spacer"></div>
+
+    <form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
+      <input type="text" name="fullName" placeholder="Your full name" ngModel />
+
+      <textarea name="message" placeholder="Your message" ngModel></textarea>
+
+      <input type="submit" value="Send" />
+    </form>
+  </div>
+</section>
