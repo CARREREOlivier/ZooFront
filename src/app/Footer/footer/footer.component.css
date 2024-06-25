@@ -6,3 +6,12 @@ footer {
   text-align: center;
   font-family: 'Cantora One', sans-serif;
 }
+.custom-link {
+  color: var(--blanc-ivoire);
+  cursor: pointer; /* Définit le curseur en pointeur */
+  transition: color 0.3s; /* Transition douce pour la couleur du texte */
+}
+
+.custom-link:hover {
+  color: #0056b3; /* Changement de couleur au survol */
+}

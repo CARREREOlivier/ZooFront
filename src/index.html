@@ -28,6 +28,8 @@
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
 
+<!-- script modal cookie et modal politique de confidentialité -->
+
 <script>
   $(document).ready(function() {
     // Afficher la modal des cookies lorsque la page est chargée si le consentement n'a pas été donné
@@ -69,6 +71,15 @@
     // Afficher la modal des cookies en cliquant sur le bouton flottant
     $('#cookieButton').click(function() {
       $('#cookieModal').modal('show');
+    });
+  });
+</script>
+<!-- script CGV -->
+<script>
+  $(document).ready(function() {
+    // Afficher la modal des conditions générales de vente en cliquant sur le lien
+    $('#conditionsLink').click(function() {
+      $('#conditionsModal').modal('show');
     });
   });
 </script>
