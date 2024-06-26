@@ -1,1 +1,34 @@
-<p>employes works!</p>
+<section>
+  <div class="row">
+    <div class="row" ><h1 class="title text-center">Nos Services</h1>
+    </div>
+    <div class="col-md-2"  id="columnButtons" >
+      <div class="d-flex flex-column">
+        <button class="btn btn-primary mb-2 btn-custom rounded-pill" (click)="fetchData('zoo-services')">Modifier les services</button>
+        <button class="btn btn-primary mb-2 btn-custom rounded-pill" (click)="fetchData('animals')">Alimentation des animaux</button>
+        <button class="btn btn-primary mb-2 btn-custom rounded-pill" (click)="fetchData('avis')">Validation des avis</button>
+        <button class="btn btn-primary mb-2 btn-custom rounded-pill" (click)="fetchData('contact')">Gestion Contact</button>
+      </div>
+    </div>
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+      <div class="container">
+        <table class="table table-striped" *ngIf="data.length > 0">
+          <thead>
+          <tr>
+            <th *ngFor="let header of tableHeaders">{{ header }}</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let row of data">
+            <td *ngFor="let header of tableHeaders">{{ row[header] }}</td>
+          </tr>
+          </tbody>
+        </table>
+        <div *ngIf="data.length === 0">
+          <p>Aucune donnée à afficher.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
