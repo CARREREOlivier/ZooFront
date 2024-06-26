@@ -9,6 +9,7 @@ import {ConnexionComponent} from "./Views/connexion/connexion.component";
 import {HabitatComponent} from "./Views/habitat/habitat.component";
 import {DashboardHabitatComponent} from "./Views/dashboard-habitat/dashboard-habitat.component";
 import {AvisComponent} from "./Views/avis/avis.component";
+import {ZooHorairesComponent} from "./Views/zoo-horaires/zoo-horaires.component";
 
 export const routes: Routes = [
   { path: '', component: AccueilComponent},
@@ -22,4 +23,5 @@ export const routes: Routes = [
   { path: 'Habitats', component: HabitatComponent},
   { path: 'Dashboard-Habitats', component: DashboardHabitatComponent},
   { path: 'Avis', component: AvisComponent},
+  { path: 'Horaires', component: ZooHorairesComponent},
 ];
