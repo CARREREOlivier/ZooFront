@@ -12,21 +12,54 @@
     </div>
     <div class="col-md-6 d-flex justify-content-center align-items-center">
       <div class="container">
-        <table class="table table-striped" *ngIf="data.length > 0">
+        <table *ngIf="data.length > 0" class="table table-striped text-center">
           <thead>
           <tr>
             <th *ngFor="let header of tableHeaders">{{ header }}</th>
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let row of data">
-            <td *ngFor="let header of tableHeaders">{{ row[header] }}</td>
-          </tr>
+          <ng-container *ngIf="currentEndpoint === 'zoo-services'">
+            <tr *ngFor="let row of data">
+              <td>{{ row.nom}}</td>
+              <td>{{ row.images}}</td>
+              <td>{{ row.description }}</td>
+              <td><button class="btn btn-secondary" (click)="editService(row)">Edit</button></td>
+            </tr>
+          </ng-container>
+          <ng-container *ngIf="currentEndpoint === 'animals'">
+            <tr *ngFor="let row of data">
+              <td>{{ row.prenom }}</td>
+              <td>{{ row.espece }}</td>
+              <td>{{ row.images }}</td>
+              <td>{{ row.habitat }}</td>
+              <td>{{ row.alimentation }}</td>
+              <td>
+                <button class="btn btn-secondary" (click)="addAlimentation(row)">Add</button>
+                <button class="btn btn-secondary" (click)="editAlimentation(row)">Edit</button>
+                <button class="btn btn-secondary" (click)="deleteAlimentation(row)">Delete</button>
+              </td>
+            </tr>
+          </ng-container>
+          <ng-container *ngIf="currentEndpoint === 'avis'">
+            <tr *ngFor="let row of data">
+              {{row.value}}
+              <td>{{ row.visible }}</td>
+              <td>{{ row.pseudo }}</td>
+              <td>{{ row.commentaire }}</td>
+              <td><button class="btn btn-secondary" (click)="readComment(row)">Lire</button></td>
+            </tr>
+          </ng-container>
+          <ng-container *ngIf="currentEndpoint === 'contact'">
+            <tr *ngFor="let row of data">
+              <td>{{ row.nom }}</td>
+              <td>{{ row.email }}</td>
+              <td>{{ row.message }}</td>
+            </tr>
+          </ng-container>
           </tbody>
         </table>
-        <div *ngIf="data.length === 0">
-          <p>Aucune donnée à afficher.</p>
-        </div>
+
       </div>
     </div>
   </div>
