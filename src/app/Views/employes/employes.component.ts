@@ -83,7 +83,7 @@ export class EmployesComponent implements OnInit,AfterViewInit {
     const modal = new bootstrap.Modal(modalElement);
     modal.show();
   }
-//sauvegarde de l'edit des
+//sauvegarde de l'edit des services
   saveChanges(): void {
     const url = `${environment.apiBaseUrl}zoo-services/${this.selectedRow.id}`;
     this.http.put(url, this.selectedRow).subscribe(response => {
@@ -119,12 +119,37 @@ export class EmployesComponent implements OnInit,AfterViewInit {
   }
 
 
-  addAlimentation(row: any) {
-    // Logique pour ajouter une alimentation
+  saveAlimentationChanges(): void {
+    const url = `${environment.apiBaseUrl}animals/${this.selectedRow.id}`;
+    this.http.put(url, this.selectedRow).subscribe(response => {
+      // Mettre à jour la ligne dans la table avec les nouvelles données
+      const index = this.data.findIndex(item => item.id === this.selectedRow.id);
+      if (index !== -1) {
+        this.data[index] = this.selectedRow;
+      }
+      // Fermer la modale
+      const modalElement = document.getElementById('editAlimentationModal');
+      const modal = bootstrap.Modal.getInstance(modalElement);
+      modal.hide();
+      this.alertMessage = 'Les modifications ont été enregistrées avec succès.';
+      this.alertClass = 'alert-success';
+      setTimeout(() => {
+        this.alertMessage = null;
+      }, 3000);
+    }, error => {
+      this.alertMessage = 'Une erreur est survenue lors de l\'enregistrement des modifications.';
+      this.alertClass = 'alert-danger';
+      setTimeout(() => {
+        this.alertMessage = null;
+      }, 3000);
+      console.error('Error saving changes:', error);
+    });
   }
-
   editAlimentation(row: any) {
-    // Logique pour éditer une alimentation
+    this.selectedRow = { ...row }; // Clone la ligne sélectionnée
+    const modalElement = document.getElementById('editAlimentationModal');
+    const modal = new bootstrap.Modal(modalElement);
+    modal.show();
   }
 
   deleteAlimentation(row: any) {

@@ -56,36 +56,36 @@
       </div>
     </div>
   </div>
+</section>
 
-  <!-- Zoo-service Modal -->
-  <div class="modal fade" id="editServiceModal" tabindex="-1" aria-labelledby="editServiceModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editServiceModalLabel">Edit Service</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form (ngSubmit)="saveChanges()">
-            <div class="mb-3">
-              <label for="serviceName" class="form-label">Service Name</label>
-              <input type="text" class="form-control" id="serviceName" [(ngModel)]="selectedRow.nom" name="serviceName">
-            </div>
-            <div class="mb-3">
-              <label for="serviceDescription" class="form-label">Service Description</label>
-              <textarea class="form-control" id="serviceDescription" [(ngModel)]="selectedRow.description" name="serviceDescription"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Save changes</button>
-          </form>
-        </div>
+<div class="spacer"></div>
+
+<!-- Zoo-service Modal -->
+<div class="modal fade" id="editServiceModal" tabindex="-1" aria-labelledby="editServiceModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editServiceModalLabel">Edit Service</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="saveChanges()">
+          <div class="mb-3">
+            <label for="serviceName" class="form-label">Service Name</label>
+            <input type="text" class="form-control" id="serviceName" [(ngModel)]="selectedRow.nom" name="serviceName">
+          </div>
+          <div class="mb-3">
+            <label for="serviceDescription" class="form-label">Service Description</label>
+            <textarea class="form-control" id="serviceDescription" [(ngModel)]="selectedRow.description" name="serviceDescription"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </form>
       </div>
     </div>
   </div>
-</section>
-<div class="spacer"></div>
+</div>
 
-
-<<!-- Bootstrap Modale pour lecture de l'avis -->
+<!-- Bootstrap Modale pour lecture de l'avis -->
 <div class="modal fade" id="readCommentModal" tabindex="-1" aria-labelledby="readCommentModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -108,3 +108,51 @@
     </div>
   </div>
 </div>
+
+<!-- Bootstrap Modal pour édition de l'alimentation des animaux -->
+
+<div class="modal fade" id="editAlimentationModal" tabindex="-1" aria-labelledby="editAlimentationModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editAlimentationModalLabel">Modifier l'Alimentation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="animalName" class="form-label">Nom de l'animal</label>
+            <input type="text" class="form-control" id="animalName" [(ngModel)]="selectedRow.prenom" name="prenom">
+          </div>
+          <div class="mb-3">
+            <label for="species" class="form-label">Espèce</label>
+            <input type="text" class="form-control" id="species" [(ngModel)]="selectedRow.espece" name="espece">
+          </div>
+
+          <div class="mb-3">
+            <label for="species" class="form-label">Habitat</label>
+            <input type="text" class="form-control" id="habitat" [(ngModel)]="selectedRow.habitat" name="habitat">
+          </div>
+
+          <div class="mb-3">
+            <label for="species" class="form-label">Alimentation</label>
+            <input type="text" class="form-control" id="Alimentation" [(ngModel)]="selectedRow.alimentation" name="alimentation">
+          </div>
+
+          <div class="mb-3">
+            <label for="species" class="form-label">Etat</label>
+            <input type="text" class="form-control" id="Etat" [(ngModel)]="selectedRow.etat" name="etat">
+          </div>
+
+
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-primary" (click)="saveAlimentationChanges()">Enregistrer les modifications</button>
+      </div>
+    </div>
+  </div>
+</div>
+
