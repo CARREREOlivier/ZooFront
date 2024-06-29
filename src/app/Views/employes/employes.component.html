@@ -27,8 +27,18 @@
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let row of data">
-            <td *ngFor="let key of tableHeaders">{{ row[key] }}</td>
+          <tr *ngFor="let row of data" [ngClass]="{'table-success': row['visible'] === true, 'table-danger': row['visible'] === false}">
+            <td *ngFor="let key of tableHeaders">
+              <ng-container *ngIf="row[key] === true">
+                <i class="bi bi-eye-fill"></i>
+              </ng-container>
+              <ng-container *ngIf="row[key] === false">
+                <i class="bi bi-eye-slash-fill"></i>
+              </ng-container>
+              <ng-container *ngIf="row[key] !== true && row[key] !== false">
+                {{ row[key] }}
+              </ng-container>
+            </td>
             <td *ngIf="showGestionColumn">
               <button *ngIf="currentEndpoint === 'zoo-services'" type="button" class="btn btn-warning" (click)="editService(row)" data-bs-toggle="tooltip" title="Edit Service">
                 <i class="bi bi-pencil-square"></i>

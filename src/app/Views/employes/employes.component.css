@@ -2,3 +2,11 @@
   margin-left: 10%;
   margin-top: 10%;
 }
+
+.table-success {
+  background-color: #d4edda;
+}
+
+.table-danger {
+  background-color: #f8d7da;
+}
