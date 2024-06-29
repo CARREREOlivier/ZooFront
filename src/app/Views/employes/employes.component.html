@@ -1,7 +1,9 @@
 <section>
   <div class="row">
-    <div class="row" ><h1 class="title text-center">Nos Services</h1>
+    <div class="row" ><h1 class="title text-center">Espace Employé(e)</h1>
+      <h2 class="subtitle text-center">{{ subtitle }}</h2>
     </div>
+
     <div class="col-md-2"  id="columnButtons" >
       <div class="d-flex flex-column">
         <button class="btn btn-primary mb-2 btn-custom rounded-pill" (click)="fetchData('zoo-services')">Modifier les services</button>
@@ -17,55 +19,28 @@
           {{ alertMessage }}
         </div>
         <!--data table-->
-        <table *ngIf="data.length > 0" class="table table-striped text-center">
+        <table class="table table-bordered table-striped">
           <thead>
           <tr>
             <th *ngFor="let header of tableHeaders">{{ header }}</th>
+            <th *ngIf="showGestionColumn">Gestion</th>
           </tr>
           </thead>
           <tbody>
-          <ng-container *ngIf="currentEndpoint === 'zoo-services'">
-            <tr *ngFor="let row of data">
-              <td>{{ row.nom}}</td>
-              <td>{{ row.images}}</td>
-              <td>{{ row.description }}</td>
-              <td>
-                <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" title="Modifier le service">
-                  <i class="bi bi-pencil-square" (click)="editService(row)"></i>
-                </button>
-              </td>
-            </tr>
-          </ng-container>
-          <ng-container *ngIf="currentEndpoint === 'animals'">
-            <tr *ngFor="let row of data">
-              <td>{{ row.prenom }}</td>
-              <td>{{ row.espece }}</td>
-              <td>{{ row.images }}</td>
-              <td>{{ row.habitat }}</td>
-              <td>{{ row.alimentation }}</td>
-              <td>
-                <button class="btn btn-secondary" (click)="addAlimentation(row)">Add</button>
-                <button class="btn btn-secondary" (click)="editAlimentation(row)">Edit</button>
-                <button class="btn btn-secondary" (click)="deleteAlimentation(row)">Delete</button>
-              </td>
-            </tr>
-          </ng-container>
-          <ng-container *ngIf="currentEndpoint === 'avis'">
-            <tr *ngFor="let row of data">
-              {{row.value}}
-              <td>{{ row.visible }}</td>
-              <td>{{ row.pseudo }}</td>
-              <td>{{ row.commentaire }}</td>
-              <td><button class="btn btn-secondary" (click)="readComment(row)">Lire</button></td>
-            </tr>
-          </ng-container>
-          <ng-container *ngIf="currentEndpoint === 'contact'">
-            <tr *ngFor="let row of data">
-              <td>{{ row.nom }}</td>
-              <td>{{ row.email }}</td>
-              <td>{{ row.message }}</td>
-            </tr>
-          </ng-container>
+          <tr *ngFor="let row of data">
+            <td *ngFor="let key of tableHeaders">{{ row[key] }}</td>
+            <td *ngIf="showGestionColumn">
+              <button *ngIf="currentEndpoint === 'zoo-services'" type="button" class="btn btn-warning" (click)="editService(row)" data-bs-toggle="tooltip" title="Edit Service">
+                <i class="bi bi-pencil-square"></i>
+              </button>
+              <button *ngIf="currentEndpoint === 'animals'" type="button" class="btn btn-warning" (click)="editAlimentation(row)" data-bs-toggle="tooltip" title="Edit Alimentation">
+                <i class="bi bi-pencil-square"></i>
+              </button>
+              <button *ngIf="currentEndpoint === 'avis'" type="button" class="btn btn-info" (click)="readComment(row)" data-bs-toggle="tooltip" title="Lecture de l'avis">
+                <i class="bi bi-book"></i>
+              </button>
+            </td>
+          </tr>
           </tbody>
         </table>
       </div>
@@ -98,3 +73,28 @@
   </div>
 </section>
 <div class="spacer"></div>
+
+
+<<!-- Bootstrap Modale pour lecture de l'avis -->
+<div class="modal fade" id="readCommentModal" tabindex="-1" aria-labelledby="readCommentModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="readCommentModalLabel">Lecture de l'avis</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Visible:</strong><i *ngIf="selectedRow.visible" class="bi bi-eye-fill"></i><i *ngIf="!selectedRow?.visible" class="bi bi-eye-slash-fill"></i></p>
+
+
+        <p><strong>Pseudo:</strong> {{ selectedRow.pseudo }}</p>
+        <p><strong>Commentaire:</strong> {{ selectedRow.commentaire }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="toggleCommentVisibility()">
+          {{ selectedRow.visible ? 'Rendre invisible l\'avis' : 'Rendre visible l\'avis' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
