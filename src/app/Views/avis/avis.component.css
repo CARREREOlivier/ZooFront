@@ -14,3 +14,10 @@ input:hover{
   border: 1px solid #410d0d;
 }
 
+.char-counter {
+  text-align: left;
+  color: #410d0d;
+  font-size: 0.9rem;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
