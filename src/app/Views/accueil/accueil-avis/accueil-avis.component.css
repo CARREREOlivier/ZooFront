@@ -1,1 +1,45 @@
-.home-testimonial{background-color: #231834;height: 380px}.home-testimonial-bottom{background-color: #f8f8f8;transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;margin-top: 20px;margin-bottom: 0px;position: relative;height: 130px;top: 190px}.home-testimonial h3{color: var(--orange);font-size: 14px;font-weight: 500;text-transform: uppercase}.home-testimonial h2{color: white;font-size: 28px;font-weight: 700}.testimonial-inner{position: relative;top: -174px}.testimonial-pos{position: relative;top: 24px}.testimonial-inner .tour-desc{border-radius: 5px;padding: 40px}.color-grey-3{font-family: "Montserrat", Sans-serif;font-size: 14px;color: #6c83a2}.testimonial-inner img.tm-people{width: 60px;height: 60px;-webkit-border-radius: 50%;border-radius: 50%;-o-object-fit: cover;object-fit: cover;max-width: none}.link-name{font-family: "Montserrat", Sans-serif;font-size: 14px;color: #6c83a2}.link-position{font-family: "Montserrat", Sans-serif;font-size: 12px;color: #6c83a2}
+.title {
+  font-size: 10rem;
+}
+
+.avis-container {
+  width: 75%;
+  margin: 0 auto; /* Centre le conteneur horizontalement */
+}
+
+.card {
+  width: 100%;
+  margin-bottom: 15px; /* Espace entre les cartes */
+  background-color: var(--vert-mousse);
+  box-shadow: 0px 5px 20px #8e8c8c; /* Ombre de la carte */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0s 0.3s; /* Transition pour l'effet de grossissement, l'ombre et le z-index */
+  position: relative; /* Assure que le z-index est appliqué */
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: var(--jaune-sable);
+  color: var(--brun-terre);
+  border-radius: 50px; /* Bord arrondi pour la pillule */
+  font-weight: bold;
+}
+
+.card-text {
+  background-color: var(--blanc-ivoire);
+  color: var(--brun-terre);
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid var(--brun-terre);
+}
+
+.card:hover {
+  transform: scale(1.5); /* Augmente la taille de la carte de 50% */
+  box-shadow: 0px 10px 30px #666; /* Augmente l'ombre pour donner un effet de surélévation */
+  z-index: 10; /* Assure que la carte survolée est au-dessus des autres */
+}
