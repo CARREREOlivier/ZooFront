@@ -1,0 +1,20 @@
+.title {
+  font-size: 5rem;
+}
+
+
+.card {
+  cursor: pointer;
+  transition: transform 0.2s;
+  margin-bottom: 20px; /* Ajoute un espace entre les cartes verticalement */
+}
+
+.card:hover {
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+}

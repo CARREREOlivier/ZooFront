@@ -1,1 +1,41 @@
-<p>veterinaires works!</p>
+<section class="vh-100">
+  <div class="container-fluid" style="width:75%">
+    <div class="row">
+      <h1 class="title text-center">Espace Vétérinaire</h1>
+    </div>
+    <div class="spacer"></div>
+    <div class="row">
+      <div class="col-md-4 mb-3" *ngFor="let animal of animals">
+        <div class="card" (click)="showAnimalDetails(animal.id)">
+          <img src="https://place-hold.it/300x300" class="card-img-top" alt="Animal Image">
+          <div class="card-body">
+            <h5 class="card-title">{{ animal.prenom }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for displaying animal details -->
+  <div class="modal fade" id="animalDetailsModal" tabindex="-1" aria-labelledby="animalDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="animalDetailsModalLabel">{{ selectedAnimal?.prenom }}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>ID:</strong> {{ selectedAnimal?.id }}</p>
+          <p><strong>Prénom:</strong> {{ selectedAnimal?.prenom }}</p>
+          <p><strong>Espèce:</strong> {{ selectedAnimal?.espece }}</p>
+          <p><strong>Habitat:</strong> {{ selectedAnimal?.habitat }}</p>
+          <p><strong>Alimentation:</strong> {{ selectedAnimal?.alimentation }}</p>
+          <p><strong>État:</strong> {{ selectedAnimal?.etat }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
