@@ -83,7 +83,7 @@ export class EmployesComponent implements OnInit,AfterViewInit {
     const modal = new bootstrap.Modal(modalElement);
     modal.show();
   }
-//sauvegarde de l'edit des services
+//sauvegarde de l'edition des services
   saveChanges(): void {
     const url = `${environment.apiBaseUrl}zoo-services/${this.selectedRow.id}`;
     this.http.put(url, this.selectedRow).subscribe(response => {
@@ -179,7 +179,7 @@ export class EmployesComponent implements OnInit,AfterViewInit {
   }
   toggleCommentVisibility(): void {
     this.selectedRow.visible = !this.selectedRow.visible; // Inverser l'état de visibilité
-    const url = `${"http://localhost:8081/"}avis/${this.selectedRow.id}`;
+    const url = `${environment.apiBaseUrl}avis/${this.selectedRow.id}`;
     this.http.put(url, this.selectedRow).subscribe(response => {
       // Mettre à jour la ligne dans la table avec les nouvelles données
       const index = this.data.findIndex(item => item.id === this.selectedRow.id);
