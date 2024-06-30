@@ -7,12 +7,12 @@ import { tap } from 'rxjs/operators';
 })
 export class AuthService {
   httpClient = inject(HttpClient);
-  baseUrl = 'http://localhost:8081/utilisateurs'
+  baseUrl = 'http://localhost:8081/'
   signup(data: any) {
-    return this.httpClient.post(`${this.baseUrl}/register`, data);
+    return this.httpClient.post(`${this.baseUrl}register`, data);
   }
   login(data: any) {
-    return this.httpClient.post(`${this.baseUrl}/login`, data)
+    return this.httpClient.post(`${this.baseUrl}login/`, data)
       .pipe(tap((result) => {
         localStorage.setItem('authUser', JSON.stringify(result));
       }));
